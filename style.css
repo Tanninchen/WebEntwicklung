@@ -1,0 +1,105 @@
+html{
+	height:100%;
+	font-family: fantasy ;
+	overflow-x: hidden; 
+}
+
+body {
+	height:100%;
+	background-image: url("https://wallpaperaccess.com/full/655045.jpg");
+	background-attachment: fixed;
+
+}
+.pimg1{
+    background-image: url('https://images.pexels.com/photos/1417651/pexels-photo-1417651.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+	min-height: 100%;
+	position: relative;
+	opacity: 0.70;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.ptext{
+	position: absolute;
+	top:55%;
+	width: 100%;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	font-size: 5em;
+	letter-spacing: 8px;
+	opacity:1;
+}
+h2{
+	padding-top: 4rem;
+	padding-bottom:3rem;
+	text-align: center;
+	color: #FFC57D;
+}
+h3{
+	padding-top: 3rem;
+	padding-bottom: 0.1em;
+	color: #96FFAD;
+}
+#headjumbotron {
+	background-color: #FFC57D;
+	margin-bottom: 0px;
+}
+button{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+#bootstrapLogo
+{
+	width: 50px;;
+}
+#primaryNavbar
+{
+	background-color:#BAA284;
+}
+#h1HeadingExample
+{
+	color: #96FFAD;
+}
+#h2HeadingExample
+{
+	padding-top: 0px;
+	padding-bottom: 0px;
+	text-align: left;
+}
+#h3HeadingExample
+{
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+#h4HeadingExample
+{
+	color: #FFC57D;
+}
+#h5HeadingExample
+{
+	color: #96FFAD;
+}
+#h6HeadingExample
+{
+	color: #FFC57D;
+}
+.carousel
+{
+	width: 100%;
+}
+#FormsContainer
+{
+	color: #FFC57D;
+}
+footer
+{
+	color: #FFC57D;
+}
+#PaginationContainer
+{
+	padding-bottom: 4rem;
+}
+#multipleTargets > .row
+{
+padding-bottom: 1rem;
+}

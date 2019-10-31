@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Project 1 - Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="BootstrapStyle.scss">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top" id="primaryNavbar">
+        <a class="navbar-brand" href="#"><img id="bootstrapLogo"
+                src="https://dotnetnuke.nl/Portals/16/EasyDNNNews/18/600600p3764EDNmainbootstrap-social-logo.png"
+                alt="bootstrap logo"></a>
+        <button class="navbar-toggler d-md-none" data-toggle="collapse" data-target="#collapse_target"
+            aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapse_target">
+            <ul class="navbar-nav mr-auto ">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true">
+                        Control Examples
+                        <span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#AlertsContainer">Alerts</a>
+                        <a class="dropdown-item" href="#ButtonsContainer">Buttons</a>
+                        <a class="dropdown-item" href="#ListGroupContainer">List Group</a>
+                        <a class="dropdown-item" href="#CardsContainer">Cards</a>
+                        <a class="dropdown-item" href="#CarouselConstainer">Carousel</a>
+                        <a class="dropdown-item" href="#JumbotronContainer">Jumbotron</a>
+                        <a class="dropdown-item" href="#CollapsContainer">Collaps</a>
+                        <a class="dropdown-item" href="#FormsContainer">Forms</a>
+                        <a class="dropdown-item" href="#BadgesContainer">Badges</a>
+                        <a class="dropdown-item" href="#PaginationContainer">Pagination</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="pimg1 ">
+        <div class="ptext">
+            <span class="border">
+                Scroll Town
+            </span>
+        </div>
+    </div>
+    <div class="container" id="wholeScreen">
+
+        <div class="container" id="AlertsContainer">
+            <h2>Alerts</h2>
+            <div class="alert alert-primary" role="alert" data-aos="fade-right">
+                This is a primary alert—check it out!
+            </div>
+            <div class="alert alert-secondary" role="alert" data-aos="fade-left">
+                This is a secondary alert—check it out!
+            </div>
+            <div class="alert alert-success" role="alert" data-aos="fade-right">
+                This is a success alert—check it out!
+            </div>
+            <div class="alert alert-danger" role="alert" data-aos="fade-left">
+                This is a danger alert—check it out!
+            </div>
+            <div class="alert alert-warning" role="alert" data-aos="fade-right">
+                This is a warning alert—check it out!
+            </div>
+            <div class="alert alert-info" role="alert" data-aos="fade-left">
+                This is a info alert—check it out!
+            </div>
+            <div class="alert alert-light" role="alert" data-aos="fade-right">
+                This is a light alert—check it out!
+            </div>
+            <div class="alert alert-dark" role="alert" data-aos="fade-left">
+                This is a dark alert with <a href="#" class="alert-link">an example link</a>. Give it a click if
+                you
+                like.
+            </div>
+        </div>
+        <div class="container" id="ButtonsContainer">
+            <h2>Buttons Example</h2>
+            <div class="container">
+                <h3>Default Background</h3>
+                <hr>
+                <div class="row justify-content-around">
+                    <div class=" col-sm-4">
+                        <button type="button" class="btn btn-primary btn-lg btn-block"
+                            data-aos="fade-right">Primary</button>
+                    </div>
+                    <div class=" col col-sm-4">
+                        <button type="button" class="btn btn-secondary btn-lg btn-block"
+                            data-aos="fade-down">Secondary</button>
+                    </div>
+                    <div class="col col-sm-4">
+                        <button type="button" class="btn btn-success  btn-lg btn-block"
+                            data-aos="fade-left">Success</button>
+                    </div>
+                </div>
+                <div class="row justify-content-around">
+                    <div class="col col-sm-4">
+                        <button type="button" class="btn btn-danger  btn-lg btn-block"
+                            data-aos="fade-right">Danger</button>
+                    </div>
+                    <div class="col col-sm-4">
+                        <button type="button" class="btn btn-warning  btn-lg btn-block"
+                            data-aos="fade-left">Warning</button>
+                    </div>
+                </div>
+                <div class="row justify-content-around">
+                    <div class=" col col-sm-4">
+                        <button type="button" class="btn btn-info  btn-lg btn-block" data-aos="fade-down">Info</button>
+                    </div>
+                </div>
+                <div class="row justify-content-around">
+                    <div class="col col-sm-4">
+                        <button type="button" class="btn btn-light  btn-lg btn-block"
+                            data-aos="fade-right">Light</button>
+                    </div>
+                    <div class="col col-sm-4">
+                        <button type="button" class="btn btn-dark btn-lg btn-block" data-aos="fade-left">Dark</button>
+                    </div>
+                </div>
+                <div class="row justify-content-around">
+
+                    <div class="col col-sm-4">
+                        <button type="button" class="btn btn-link btn-lg btn-block" data-aos="fade-up">Link</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="container">
+                <h3>Outline Buttons</h3>
+                <hr>
+                <div class="row justify-content-around">
+                    <div class=" col-sm-4">
+                        <button type="button" class="btn btn-outline-primary btn-lg btn-block"
+                            data-aos="fade-right">Primary</button>
+                    </div>
+                    <div class=" col col-sm-4">
+                        <button type="button" class="btn btn-outline-secondary btn-lg btn-block"
+                            data-aos="fade-down">Secondary</button>
+                    </div>
+                    <div class="col col-sm-4">
+                        <button type="button" class="btn btn-outline-success  btn-lg btn-block"
+                            data-aos="fade-left">Success</button>
+                    </div>
+                </div>
+                <div class="row justify-content-around">
+                    <div class="col col-sm-4">
+                        <button type="button" class="btn btn-outline-danger  btn-lg btn-block"
+                            data-aos="fade-right">Danger</button>
+                    </div>
+                    <div class="col col-sm-4">
+                        <button type="button" class="btn btn-outline-warning  btn-lg btn-block"
+                            data-aos="fade-left">Warning</button>
+                    </div>
+                </div>
+                <div class="row justify-content-around">
+                    <div class=" col col-sm-4">
+                        <button type="button" class="btn btn-outline-info  btn-lg btn-block"
+                            data-aos="fade-down">Info</button>
+                    </div>
+                </div>
+                <div class="row justify-content-around">
+                    <div class="col col-sm-4">
+                        <button type="button" class="btn btn-outline-light  btn-lg btn-block"
+                            data-aos="fade-right">Light</button>
+                    </div>
+                    <div class="col col-sm-4">
+                        <button type="button" class="btn btn-outline-dark btn-lg btn-block"
+                            data-aos="fade-left">Dark</button>
+                    </div>
+                </div>
+                <div class="row justify-content-around">
+
+                    <div class="col col-sm-4">
+                        <button type="button" class="btn btn-outline-link btn-lg btn-block"
+                            data-aos="fade-up">Link</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container" id="ListGroupContainer">
+            <h2>List Group</h2>
+            <div class="container">
+                <h3>Basic </h3>
+                <hr>
+                <div class="row justify-content-around">
+                    <ul class="list-group col-sm-5" data-aos="slide-right">
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Morbi leo risus</li>
+                        <li class="list-group-item">Porta ac consectetur ac</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                    <ul class="list-group col-sm-5 " data-aos="slide-left">
+                        <li class="list-group-item list-group-item-primary">Cras justo odio</li>
+                        <li class="list-group-item list-group-item-secondary">Dapibus ac facilisis in</li>
+                        <li class="list-group-item list-group-item-warning">Morbi leo risus</li>
+                        <li class="list-group-item list-group-item-info">Porta ac consectetur ac</li>
+                        <li class="list-group-item list-group-item-dark">Vestibulum at eros</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <h3>Active items </h3>
+                <hr>
+                <div class="row justify-content-around">
+                    <ul class="list-group col-sm-5" data-aos="slide-right">
+                        <li class="list-group-item active">Cras justo odio</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Morbi leo risus</li>
+                        <li class="list-group-item">Porta ac consectetur ac</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                    <ul class="list-group col-sm-5 " data-aos="slide-left">
+                        <li class="list-group-item list-group-item-primary active">Cras justo odio</li>
+                        <li class="list-group-item list-group-item-secondary">Dapibus ac facilisis in</li>
+                        <li class="list-group-item list-group-item-warning">Morbi leo risus</li>
+                        <li class="list-group-item list-group-item-info">Porta ac consectetur ac</li>
+                        <li class="list-group-item list-group-item-dark">Vestibulum at eros</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="container">
+                <h3>With Badges </h3>
+                <hr>
+                <div class="row justify-content-around">
+                    <ul class="list-group col-sm-5" data-aos="slide-right">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Cras justo odio
+                            <span class="badge badge-primary badge-pill">14</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Dapibus ac facilisis in
+                            <span class="badge badge-primary badge-pill">2</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Morbi leo risus
+                            <span class="badge badge-primary badge-pill">1</span>
+                        </li>
+                    </ul>
+                    <ul class="list-group col-sm-5 " data-aos="slide-left">
+                        <li
+                            class="list-group-item d-flex justify-content-between align-items-center list-group-item-primary">
+                            Cras justo odio
+                            <span class="badge badge-primary badge-pill">14</span>
+                        </li>
+                        <li
+                            class="list-group-item d-flex justify-content-between align-items-center list-group-item-secondary">
+                            Dapibus ac facilisis in
+                            <span class="badge badge-primary badge-pill">2</span>
+                        </li>
+                        <li
+                            class="list-group-item d-flex justify-content-between align-items-center list-group-item-warning">
+                            Morbi leo risus
+                            <span class="badge badge-primary badge-pill">1</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="CardsContainer">
+            <h2>Cards</h2>
+            <div class="container">
+                <h3>Card Example</h3>
+                <hr>
+                <div class="row justify-content-around">
+                    <div class="card" data-aos="zoom-in">
+                        <img class="card-img-top"
+                            src="https://i.pinimg.com/originals/81/a5/f2/81a5f245b0f865327aa62ffa676d3959.jpg"
+                            alt="mandala">
+                        <div class="card-body">
+                            <h3 class="card-title">Card title</h3>
+                            <p class="card-text">
+                                Some quick example text to build on the card title
+                                and make up the bulk of the card's content.
+                            </p>
+                            <a href="#!" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="container" id="cardGroup">
+                <h3>Card Group </h3>
+                <hr>
+                <div class="row justify-content-around">
+                    <div class="card-group">
+                        <div class="card" data-aos="fade-right">
+                            <div class="card-body">
+                                <h4 class="card-title">Card title</h4>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to
+                                    additional content. This content is a little bit longer.</p>
+                                <img class="card-img-bottom"
+                                    src="https://i.pinimg.com/600x315/8a/07/ef/8a07eff15223b91e0df76b24c29c74a0.jpg"
+                                    alt="feder">
+                            </div>
+                        </div>
+                        <div class="card" data-aos="fade-up">
+                            <div class="card-body">
+                                <h4 class="card-title">Card title</h4>
+                                <p class="card-text">This card has supporting text below as a natural lead-in to
+                                    additional
+                                    content.</p>
+                                <img class="card-img-bottom"
+                                    src="https://t4.ftcdn.net/jpg/00/80/19/67/500_F_80196798_Hqa9ULKLjgeQ6MLcHEmAXHvJTgQXaq9h.jpg"
+                                    alt="feder">
+                            </div>
+                        </div>
+                        <div class="card" data-aos="fade-left">
+                            <div class="card-body">
+                                <h4 class="card-title">Card title</h4>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to
+                                    additional content. This card has even longer content than the first to show that
+                                    equal
+                                    height action.</p>
+                                <img class="card-img-bottom"
+                                    src="https://previews.123rf.com/images/juliasnegireva/juliasnegireva1504/juliasnegireva150400050/39555709-kunstvoll-gezeichnet-stilisiert-vektor-feder-auf-einem-wei%C3%9Fen-hintergrund-.jpg"
+                                    alt="feder">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="container" id="CarouselConstainer">
+            <h2>Carousel</h2>
+            <div class="row justify-content-around" data-aos="zoom-in">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100"
+                                src="https://gresb.com/wp-content/uploads/2019/05/QP-Resilience-Newsletter-600x400.png"
+                                alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="https://www.w3schools.com/w3css/img_lights.jpg"
+                                alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100"
+                                src="http://discoverymuseum.org/wp-content/uploads/2017/09/EarthSciences-600x400.jpg"
+                                alt="Third slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="JumbotronContainer">
+            <h2>Jumbotron</h2>
+            <div class="jumbotron" data-aos="flip-left">
+                <h1 class="display-4">Hello, world!</h1>
+                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra
+                    attention to featured content or information.</p>
+                <hr class="my-4">
+                <p>It uses utility classes for typography and spacing to space content out within the larger
+                    container.
+                </p>
+                <p class="lead">
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                </p>
+            </div>
+        </div>
+        <div class="container" id="CollapsContainer">
+            <h2>Collaps</h2>
+            <div class="container" id="multipleTargets">
+                <h3>Multiple Targets</h3>
+                <hr>
+                <div class="row">
+                    <button class="btn btn-primary" data-toggle="collapse" data-target="#multiCollapseExample1"
+                        aria-expanded="false" aria-controls="multiCollapseExample1" data-aos="fade-left">Toggle first
+                        element</button>
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample1">
+                            <div class="card card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                richardson ad
+                                squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+                                sapiente
+                                ea proident.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="btn btn-primary" data-toggle="collapse" data-target="#multiCollapseExample2"
+                        aria-expanded="false" aria-controls="multiCollapseExample2" data-aos="fade-right">Toggle second
+                        element</button>
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample2">
+                            <div class="card card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                richardson ad
+                                squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+                                sapiente
+                                ea proident.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse"
+                        aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2"
+                        data-aos="fade-left">Toggle both
+                        elements</button>
+                </div>
+            </div>
+            <div class="container" data-aos="zoom-in">
+                <h3>According Example</h3>
+                <hr>
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Collapsible Group Item #1
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                                squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                                quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
+                                squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+                                craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
+                                butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
+                                nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Collapsible Group Item #2
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                                squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                                quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
+                                squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+                                craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
+                                butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
+                                nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Collapsible Group Item #3
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                                squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                                quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
+                                squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+                                craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
+                                butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
+                                nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="FormsContainer">
+            <h2>Forms</h2>
+            <h3>Form Controls</h3>
+            <form>
+                <div class="form-group" data-aos="fade-left">
+                    <label for="exampleFormControlInput1">Email address</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                        placeholder="name@example.com">
+                </div>
+                <div class="form-group" data-aos="fade-right">
+                    <label for="exampleFormControlSelect1">Example select</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group" data-aos="fade-left">
+                    <label for="exampleFormControlSelect2">Example multiple select</label>
+                    <select multiple class="form-control" id="exampleFormControlSelect2">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group" data-aos="fade-right">
+                    <label for="exampleFormControlTextarea1">Example textarea</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+            </form>
+            <h3>Different sizes</h3>
+            <form>
+                <div class="form-group row" data-aos="fade-left">
+                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control form-control-sm" id="colFormLabelSm"
+                            placeholder="col-form-label-sm">
+                    </div>
+                </div>
+                <div class="form-group row" data-aos="fade-right">
+                    <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                    </div>
+                </div>
+                <div class="form-group row" data-aos="fade-left">
+                    <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control form-control-lg" id="colFormLabelLg"
+                            placeholder="col-form-label-lg">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="container" id="BadgesContainer">
+            <h2>Badges</h2>
+            <h1 id="h1HeadingExample" data-aos="fade-right">Example heading <span class="badge badge-primary">New</span>
+            </h1>
+            <h2 id="h2HeadingExample" data-aos="fade-left">Example heading <span
+                    class="badge badge-secondary">New</span></h2>
+            <h3 id="h3HeadingExample" data-aos="fade-right">Example heading <span class="badge badge-danger">New</span>
+            </h3>
+            <h4 id="h4HeadingExample" data-aos="fade-left">Example heading <span class="badge badge-info">New</span>
+            </h4>
+            <h5 id="h5HeadingExample" data-aos="fade-right">Example heading <span
+                    class="badge badge-secondary">New</span></h5>
+            <h6 id="h6HeadingExample" data-aos="fade-left">Example heading <span
+                    class="badge badge-secondary">New</span></h6>
+        </div>
+
+        <div class="container" id="PaginationContainer">
+            <h2>Pagination</h2>
+            <nav aria-label="Page navigation example" data-aos="flip-left">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link">1</a></li>
+                    <li class="page-item"><a class="page-link">2</a></li>
+                    <li class="page-item"><a class="page-link">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <footer class="page-footer font-small indigo">
+        <hr>
+        <div class="footer-copyright text-center py-3">© 2019 Copyright: Tanja Buczkowski
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
