@@ -29,12 +29,6 @@ async function tsLint() {
         .pipe(tslint.report());
 }
 
-// async function copyLibs() {
-//     return src('.css')
-//         .pipe(debug({ title: 'dep :' }))
-//         .pipe(dest('./dist'));
-// }
-
 async function esLint() {
     return src(['*.js'])
         .pipe(eslint())
@@ -46,5 +40,4 @@ exports.eslint = esLint;
 exports.html = html;
 exports.uncomment = unComment;
 exports.tslint = tsLint;
-// exports.copyLibs = copyLibs;
 exports.default = parallel(html, esLint, unComment);

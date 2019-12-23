@@ -17,6 +17,7 @@ class cgolpitch extends HTMLElement {
         window.onload = () => this.init();
         window.onresize = () => this.calculateGrid();
     }
+
     init() {
 
         var rows = 25;
@@ -24,35 +25,40 @@ class cgolpitch extends HTMLElement {
         gameLogic.rows = rows;
         gameLogic.columns = columns;
         this.setClickEvents();
-        var generation : any = document.getElementById('generation');
+        var generation: any = document.getElementById('generation');
         generation.innerHTML = "Generation: " + gameLogic.generation.toString();
         cgolpitch.generateField(document.getElementById('match-grid'), rows, columns);
+        var gridSize: any = document.getElementById("grid-size");
+        gridSize.innerHTML  = (rows.toString() + "X" + columns.toString());
     }
+
     setClickEvents() {
-        var startbutton: any = document.getElementById('start-button')?.addEventListener("click", function () {
+        document.getElementById('start-button')?.addEventListener("click", function () {
             event?.preventDefault();
             gameLogic.start();
         });
-        var pausebutton: any = document.getElementById('pause-button')?.addEventListener("click", function () {
+        document.getElementById('pause-button')?.addEventListener("click", function () {
             event?.preventDefault();
             gameLogic.pause();
         });
 
-        var clearbutton: any = document.getElementById('clear-button')?.addEventListener("click", function () {
+        document.getElementById('clear-button')?.addEventListener("click", function () {
             event?.preventDefault();
             gameLogic.clear();
         });
-        var setSizeButton: any = document.getElementById('set-size-button')?.addEventListener("click", function () {
+        document.getElementById('set-size-button')?.addEventListener("click", function () {
             event?.preventDefault();
             gameLogic.SetSize();
         });
     }
+
     static generateField(grid: any, rows: any, columns: any) {
         console.log('create matchfield');
 
-        for (let i = grid.childNodes.length - 1; i >= 0; i--) {
-            grid.removeChild(grid.childNodes[i]);
+        while (grid.firstChild) {
+            grid.removeChild(grid.firstChild);
         }
+
         var array = new Array(rows);
         var nextGrid = new Array(rows);
         let matchfield = grid;
@@ -70,6 +76,7 @@ class cgolpitch extends HTMLElement {
                 matchfield.appendChild(divcell);
             }
         }
+
         document.body.appendChild(matchfield);
 
         for (var i: number = 0; i < rows; i++) {
@@ -84,40 +91,16 @@ class cgolpitch extends HTMLElement {
         gameLogic.grid = array;
         gameLogic.nextGrid = nextGrid;
 
-        // for (let i = 0; i < rows; i++) {
-        //     array[i] = new Array(columns);
-        //     var div = document.createElement('div');
-        //     for (let j = 0; j < columns; j++) {
-        //         let divcell = document.createElement("div");
-        //         divcell.style.padding = '0px';
-        //         divcell.className = 'cell';
-        //         divcell.id = (Number(i) + ',' + Number(j));
-        //         var cellSize = Math.trunc(Math.min((window.innerWidth - 20) / columns, window.innerHeight / rows));
-        //         divcell.style.width = cellSize.toString() + 'px';
-        //         divcell.style.height = cellSize.toString() + 'px';
-        //         divcell.style.background = '#dae8e2';
-        //         div.id = j.toString();
-        //         array[i][j] = divcell;
-        //         array[i][j] = 2;
-        //         //array[i][j].setAttribute('class', 'dead');
-        //         divcell.onclick = () => gameLogic.SetState(divcell);
-
-        //         div.appendChild(divcell);
-
-        //         div.style.border = "0";
-        //         div.style.height = cellSize.toString() + "px";
-        //         matchfield.appendChild(div);
-        //     }
-        // }
-
-        // document.body.appendChild(matchfield);
     }
+
     static get observedAttributes() {
         return [];
     }
+
     calculateGrid() {
 
     }
+
     attributeChangedCallback(name: any, oldValue: any, newValue: any) {
     }
 
@@ -132,6 +115,7 @@ enum state {
     alive,
     oncealive
 }
+
 class gameLogic {
 
     public static grid: any;
@@ -140,7 +124,8 @@ class gameLogic {
     public static nextGrid: any;
     public static rundGame: boolean;
     public static interval: any;
-    public static generation : number = 0;
+    public static generation: number = 0;
+
     public() {
 
     }
@@ -148,7 +133,7 @@ class gameLogic {
     }
     static run() {
 
-        this.interval = setInterval(() => this.generateNextGeneration(), 500);
+        this.interval = setInterval(() => this.generateNextGeneration(), 200);
 
     }
 
@@ -156,19 +141,19 @@ class gameLogic {
         this.applyRules();
         this.copyAndResetGrid();
         this.updateView();
-        var generation : any = document.getElementById('generation');
+        var generation: any = document.getElementById('generation');
         generation.innerHTML = "Generation: " + gameLogic.generation.toString();
-
     }
+
     static updateView() {
         for (var i = 0; i < this.rows; i++) {
             for (var j = 0; j < this.columns; j++) {
                 let idCell = i.toString() + ";" + j.toString();
                 var cell: any = document.getElementById(idCell);
-                if (this.grid[i][j] == state.dead) {
+                if (this.grid[i][j] === state.dead) {
                     //cell.setAttribute("class", "dead");
                     cell.style.backgroundColor = "#dae8e2";
-                } else if (this.grid[i][j] == state.oncealive) {
+                } else if (this.grid[i][j] === state.oncealive) {
                     // cell.setAttribute("class", "live");
                     cell.style.background = '#D93919';
                 }
@@ -178,43 +163,42 @@ class gameLogic {
             }
         }
     }
+
     static copyAndResetGrid() {
         var lifeState: any;
         for (var i = 0; i < this.rows; i++) {
             for (var j = 0; j < this.columns; j++) {
-                if (this.grid[i][j] == 2) {
+                if (this.grid[i][j] === state.oncealive) {
                     lifeState = state.oncealive;
-                } else if (this.grid[i][j] == state.dead) {
+                } else if (this.grid[i][j] === state.dead) {
                     lifeState = state.dead;
                 }
                 this.grid[i][j] = this.nextGrid[i][j];
-                //this.nextGrid[i][j] = state.dead;
+                this.nextGrid[i][j] = lifeState;
             }
         }
-
     }
 
     static applyRules() {
-
         for (var i: number = 0; i < this.rows; i++) {
             for (var j: number = 0; j < this.columns; j++) {
                 var numberOfNighbors = this.countNeighbors(this.grid, i, j);
                 let idCell = i.toString() + ";" + j.toString();
                 var cell: any = document.getElementById(idCell);
 
-                if (this.grid[i][j] == state.alive) {
+                if (this.grid[i][j] === state.alive) {
                     if (numberOfNighbors < 2) {
                         this.nextGrid[i][j] = state.oncealive;
                         cell.style.background = '#D93919';
-                    } else if (numberOfNighbors == 2 || numberOfNighbors == 3) {
+                    } else if (numberOfNighbors === 2 || numberOfNighbors === 3) {
                         this.nextGrid[i][j] = state.alive;
                         cell.style.background = '#4fdc1b';
                     } else if (numberOfNighbors > 3) {
                         this.nextGrid[i][j] = state.oncealive;
                         cell.style.background = '#D93919';
                     }
-                } else if (this.grid[i][j] == state.oncealive || this.grid[i][j] == state.dead) {
-                    if (numberOfNighbors == 3) {
+                } else if (this.grid[i][j] === state.oncealive || this.grid[i][j] === state.dead) {
+                    if (numberOfNighbors === 3) {
                         this.nextGrid[i][j] = state.alive;
                         cell.style.background = '#4fdc1b';
                     }
@@ -226,12 +210,15 @@ class gameLogic {
     }
     public static SetSize() {
 
+        this.clear();
+
         var height = Number((<HTMLInputElement>document.getElementById('height-textbox-value')).value);
         var width = Number((<HTMLInputElement>document.getElementById('width-textbox-value')).value);
 
         if (height < 10) {
 
             this.rows = 10;
+
         } else {
             this.rows = height;
         }
@@ -241,47 +228,53 @@ class gameLogic {
         } else {
             this.columns = width;
         }
-        cgolpitch.generateField(this.grid, this.rows, this.columns);
+
+        var generation: any = document.getElementById('generation');
+        generation.innerHTML = "Generation: " + gameLogic.generation.toString();
+
+        cgolpitch.generateField(document.getElementById('match-grid'), this.rows, this.columns);
+
+        var gridSize: any = document.getElementById("grid-size");
+        gridSize.innerHTML  = (this.rows.toString() + "X" + this.columns.toString());
     }
 
     static SetState(div: any) {
 
         var index = div.id.toString().split(";");
 
-        if (this.grid[index[0]][index[1]] == state.alive) {
+        if (this.grid[index[0]][index[1]] === state.alive) {
             div.style.backgroundColor = "#dae8e2";
             this.grid[index[0]][index[1]] = state.dead;
 
-        } else if (this.grid[index[0]][index[1]] == state.dead) {
+        } else if (this.grid[index[0]][index[1]] === state.dead) {
             div.style.background = '#4fdc1b';
             this.grid[index[0]][index[1]] = state.alive;
         }
-
     }
+
     static start() {
         this.run();
     }
+
     static clear() {
         clearTimeout(this.interval);
         var cells = document.getElementsByClassName('cell');
-		
-		for (let index = 0; index < cells.length; index++)
-		{			
-			(<HTMLElement>cells[index]).style.backgroundColor = "#dae8e2";	
-		}
 
-		// Clear logical array.
-		for(var i: number = 0; i < this.rows; i++) {
+        for (let index = 0; index < cells.length; index++) {
+            (<HTMLElement>cells[index]).style.backgroundColor = "#dae8e2";
+        }
+
+        for (var i: number = 0; i < this.rows; i++) {
             this.grid[i] = [];
             this.nextGrid[i] = [];
-            for(var j: number = 0; j < this.columns; j++) {
+            for (var j: number = 0; j < this.columns; j++) {
                 this.grid[i][j] = state.dead;
                 this.nextGrid[i][j] = state.dead;
             }
         }
 
         this.generation = 0;
-        var generation : any = document.getElementById('generation');
+        var generation: any = document.getElementById('generation');
         generation.innerHTML = "Generation: " + gameLogic.generation.toString();
     }
 
@@ -291,18 +284,17 @@ class gameLogic {
 
     static countNeighbors(matchfield: any, row: any, col: any) {
         var neightbors = 0;
-        let sum = 0;
         for (var i = -1; i < 2; i++) {
             for (var j = -1; j < 2; j++) {
                 var tempCol = (col + i + this.columns) % this.columns;
                 var tempRow = (row + j + this.rows) % this.rows;
-                if (matchfield[tempRow][tempCol] == state.alive) {
+                if (matchfield[tempRow][tempCol] === state.alive) {
                     neightbors++;
                 }
             }
         }
-        if (matchfield[row][col]== state.alive) {
-            sum--;
+        if (matchfield[row][col] === state.alive) {
+            neightbors--;
         }
         return neightbors;
     }
