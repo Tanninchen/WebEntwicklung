@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="form-group row">
+        <label for="width-textbox-value" class="col-sm-2 col-form-label col-form-label-sm">URL:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control form-control-sm" id="custom_url" placeholder="www.sample.com"
+                [(ngModel)]="custom_url">
+        </div>
+        <label for="width-textbox-value" class="col-sm-2 col-form-label col-form-label-sm">Query:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control form-control-sm" id="custom_query" placeholder="div"
+                [(ngModel)]="custom_query">
+            <button class="btn btn-success" (click)="setMonitoring()">Monitor</button>
+        </div>
+        <div>
+            <br>
+            Website beeing monitored: {{custom_url}}
+            <br>
+            Query: {{custom_query}}
+        </div>
+    </div>
+</div>
